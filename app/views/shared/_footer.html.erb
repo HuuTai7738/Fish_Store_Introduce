@@ -1,0 +1,43 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="footer__about">
+        <div class="footer__about__logo">
+          <%= link_to root_path do %>
+            <%= image_tag "logo.png" %>
+          <% end %>
+        </div>
+        <ul>
+          <li><%= t "address" %></li>
+          <li><%= t "phone" %></li>
+          <li><%= t "email" %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+      <div class="footer__widget">
+        <ul>
+          <li>
+            <%= link_to t("contact"), root_path %>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <%= link_to t("contact"), root_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12">
+      <div class="footer__widget">
+        <h6><%= t "get_email" %></h6>
+        <p>"<%= t "get_email_send" %></p>
+        <form action="#">
+          <input type="text" placeholder="Enter your mail">
+          <button type="submit" class="site-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

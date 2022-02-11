@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
     root "static_pages#home"
     get "/contact", to: "static_pages#contact"
+    get "/login", to: "sessions#new"
+    post "/login", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
 
     namespace :admin do
       root "admin#index"

@@ -22,11 +22,18 @@
                 <li><%= link_to t("vietnamese"), locale:"vi" %></li>
               </ul>
             </div>
-            <div class="header__top__right__auth">
-              <%= link_to root_path do %>
-                <%= t "login" %>
-                <i class="fa fa-user"></i>
-              <% end %>
+            <div class="header__top__right__language">
+              <i class="fa fa-user"></i>
+              <span class="arrow_carrot-down"></span>
+              <ul>
+                <li><%= link_to t("login"), login_path %></li>
+                <% if logged_in? %>
+                  <li>
+                    <%= link_to t("logout"), logout_path,
+                      method: :delete %>
+                  </li>
+                <% end %>
+              </ul>
             </div>
           </div>
         </div>

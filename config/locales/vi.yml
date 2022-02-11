@@ -3,6 +3,7 @@ vi:
   vietnamese: "Tiếng Việt"
   language: "Ngôn Ngữ"
   login: "Đăng nhập"
+  logout: "Đăng xuất"
   free_ship: "Miễn phí vận chuyển"
   base_title: "Cửa hàng hải sản tươi sống"
   home: "Trang chủ"
@@ -23,6 +24,8 @@ vi:
   dashboard: "THỐNG KÊ"
   users: "NGƯỜI DÙNG"
   orders: "ĐƠN HÀNG"
+  fail_login: "Đăng nhập thất bại"
+  login_admin: "Bạn không có quyền!"
   static_pages:
     home:
       title: "Trang chủ"
@@ -30,3 +33,8 @@ vi:
       all: "Tất cả"
     contact:
       title: "Liên Hệ"
+  sessions:
+    new:
+      log_in: "Đăng nhập"
+      new_user: "User mới"
+      sign_up_now: "Đăng kí ngay!"

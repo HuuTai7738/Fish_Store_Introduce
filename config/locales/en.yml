@@ -3,6 +3,7 @@ en:
   vietnamese: "Vietnamese"
   language: "Languages"
   login: "Login"
+  logout: "Logout"
   free_ship: "Free Shipping for all Order"
   base_title: "Fresh Seafood Store"
   home: "home"
@@ -23,6 +24,8 @@ en:
   dashboard: "DASHBOARD"
   users: "USERS"
   orders: "ORDERS"
+  fail_login: "Fail login"
+  login_admin: "Please login with admin"
   static_pages:
     home:
       title: "home"
@@ -30,3 +33,8 @@ en:
       all: "All"
     contact:
       title: "contact"
+  sessions:
+    new:
+      log_in: "Log in"
+      new_user: "New user"
+      sign_up_now: "Sign up now!"

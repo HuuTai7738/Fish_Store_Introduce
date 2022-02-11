@@ -1,6 +1,6 @@
 <nav class="t-header">
   <div class="t-header-brand-wrapper">
-    <%= link_to root_path do %>
+    <%= link_to admin_root_path do %>
       <%= image_tag "logo.png" %>
     <% end %>
   </div>
@@ -17,6 +17,11 @@
         </div>
       </form>
       <ul class="nav ml-auto">
+        <li class="nav-item">
+          <%= link_to logout_path, method: :delete, class: "btn" do %>
+            <i class="fa-solid fa-right-from-bracket"></i>
+          <% end %>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" id="notificationDropdown"
             data-toggle="dropdown" aria-expanded="false">

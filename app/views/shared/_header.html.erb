@@ -1,0 +1,75 @@
+<!-- Header Section Begin -->
+
+<div class="header__top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+          <div class="header__top__left">
+            <ul>
+              <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+              <li><%= t "free_ship" %></li>
+            </ul>
+          </div>
+      </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="header__top__right">
+            <div class="header__top__right__language">
+              <%= image_tag "language.png" %>
+              <div><%= t "language" %></div>
+              <span class="arrow_carrot-down"></span>
+              <ul>
+                <li><%= link_to t("english"), locale:"en" %></li>
+                <li><%= link_to t("vietnamese"), locale:"vi" %></li>
+              </ul>
+            </div>
+            <div class="header__top__right__auth">
+              <%= link_to root_path do %>
+                <%= t "login" %>
+                <i class="fa fa-user"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <div class="header__logo">
+        <%= link_to root_path do%>
+          <%= image_tag "logo.png" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <nav class="header__menu">
+        <ul>
+          <li><%= link_to t("home"), root_path %></li>
+          <li><%= link_to t("product"), root_path %></li>
+          <li><%= link_to t("cart"), root_path %>
+            <ul class="header__menu__dropdown">
+              <li><%= link_to t("cart"), root_path %></li>
+            </ul>
+          </li>
+          <li><%= link_to t("contact"), contact_path %></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-lg-3">
+      <div class="header__cart">
+        <ul>
+          <li>
+            <%= link_to root_path do %>
+              <i class="fa fa-shopping-bag"></i>
+              <span>3</span>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="humberger__open">
+    <i class="fa fa-bars"></i>
+  </div>
+</div>

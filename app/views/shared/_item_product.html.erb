@@ -1,0 +1,19 @@
+<div class="col-lg-4 col-md-4 col-sm-6">
+  <div class="featured__item">
+    <div class="featured__item__pic set-bg">
+      <%= image_tag "fish.jpg" %>
+      <ul class="featured__item__pic__hover">
+        <li><a href="#"><i class="fa-solid fa-circle-info"></i></a></li>
+        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+      </ul>
+    </div>
+    <div class="featured__item__text">
+      <h6>
+      <%= link_to product.name, "#" %>
+      </h6>
+      <h5>
+        <%= "#{product.price} $ / #{product.unit}" %>
+      </h5>
+      </div>
+  </div>
+</div>

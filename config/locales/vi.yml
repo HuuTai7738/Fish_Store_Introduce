@@ -26,6 +26,14 @@ vi:
   orders: "ĐƠN HÀNG"
   fail_login: "Đăng nhập thất bại"
   login_admin: "Bạn không có quyền!"
+  fresh: "Tươi thật tươi"
+  fish: "Cá"
+  from_sea: "100% từ biển"
+  free: "Giao hàng tận nơi MIỄN PHÍ"
+  shop_now: "MUA NGAY"
+  sort_by: "Lọc theo"
+  all_product: "Tất cả sản phẩm"
+  price: "Giá"
   static_pages:
     home:
       title: "Trang chủ"

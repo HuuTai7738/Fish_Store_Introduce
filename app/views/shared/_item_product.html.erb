@@ -3,16 +3,20 @@
     <div class="featured__item__pic set-bg">
       <%= image_tag "fish.jpg" %>
       <ul class="featured__item__pic__hover">
-        <li><a href="#"><i class="fa-solid fa-circle-info"></i></a></li>
+        <li>
+          <%= link_to product do %>
+            <i class="fa-solid fa-circle-info"></i>
+          <% end %>
+        </li>
         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
       </ul>
     </div>
     <div class="featured__item__text">
       <h6>
-      <%= link_to product.name, "#" %>
+      <%= link_to product.name, product %>
       </h6>
       <h5>
-        <%= "#{product.price} $ / #{product.unit}" %>
+        <%= "#{number_to_currency product.price} / #{product.unit}" %>
       </h5>
       </div>
   </div>

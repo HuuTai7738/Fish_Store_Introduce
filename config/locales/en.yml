@@ -34,6 +34,12 @@ en:
   sort_by: "Sort by"
   all_product: "All Product"
   price: "Price"
+  add_to_cart: "Add to cart"
+  product_remain: "product remain"
+  shipping: "Shipping"
+  unit: "Unit"
+  product_details: "Product details"
+  not_found: "Not found"
   static_pages:
     home:
       title: "home"

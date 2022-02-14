@@ -26,6 +26,14 @@ en:
   orders: "ORDERS"
   fail_login: "Fail login"
   login_admin: "Please login with admin"
+  fresh: "Fresh"
+  fish: "Fish"
+  from_sea: "100% from Sea"
+  free: "Free Pickup and Delivery Available"
+  shop_now: "SHOP NOW"
+  sort_by: "Sort by"
+  all_product: "All Product"
+  price: "Price"
   static_pages:
     home:
       title: "home"

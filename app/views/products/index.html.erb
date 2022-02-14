@@ -1,0 +1,59 @@
+<% provide :title, t("product") %>
+<section class="product spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-5">
+        <div class="sidebar">
+          <div class="sidebar__item">
+            <h4><%= t "department" %></h4>
+            <ul>
+              <% @categories.each do |category| %>
+                <li><%= link_to category.name, root_path %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="sidebar__item">
+            <h4>
+              <%= t "price" %>
+            </h4>
+            <div class="price-range-wrap">
+              <div class="range-slider">
+                <div class="price-input">
+                  <input type="text" id="minamount">
+                  <input type="text" id="maxamount">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-7">
+        <div class="product__discount">
+          <div class="section-title product__discount__title">
+            <h2><%= t "all_product" %></h2>
+          </div>
+          <div class="filter__item">
+            <div class="row">
+              <div class="col-lg-4 col-md-5">
+                <div class="filter__sort">
+                  <span><%= t "sort_by"%></span>
+                  <select>
+                    <option value="0">Default</option>
+                    <option value="0">Default</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <%= render partial: "shared/item_product", collection: @products, as: :product %>
+          </div>
+          <div class="row">
+            <%== pagy_bootstrap_nav(@pagy) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product Section End -->

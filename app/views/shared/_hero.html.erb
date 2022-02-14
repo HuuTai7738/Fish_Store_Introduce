@@ -7,7 +7,9 @@
           <span><%= t "department" %></span>
         </div>
         <ul>
-          <li><%= link_to t("fish"), root_path %></li>
+          <% @categories.each do |category| %>
+            <li><%= link_to category.name, root_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -30,6 +32,21 @@
           <div class="hero__search__phone__text">
             <h5>+65 11.188.888</h5>
             <span><%= t "support" %></span>
+          </div>
+        </div>
+        <div class="hero__item set-bg">
+          <div class="hero__text">
+            <span>
+              <% t "fresh" %>
+            </span>
+            <h2>
+              <%= t "vegetable" %> <br />
+              <%= t "from_sea" %>
+            </h2>
+            <p>
+              <%= t "free" %>
+            </p>
+            <%= link_to t("shop_now"), "#", class: "primary-btn" %>
           </div>
         </div>
       </div>

@@ -1,0 +1,54 @@
+<% provide :title, t("product_details") %>
+<section class="product-details spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6">
+        <div class="product__details__pic">
+          <div class="product__details__pic__item">
+            <%= image_tag "fish.jpg", class: "product__details__pic__item--large" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="product__details__text">
+          <h3>
+            <%= @product.name %>
+          </h3>
+          <div class="product__details__price">
+            <%= "#{number_to_currency @product.price} / #{@product.unit}" %>
+          </div>
+          <p>
+            <%= @product.description %>
+          </p>
+          <ul>
+            <li>
+              <b><%= t "quantity" %></b>
+              <span><%= "#{@product.quantity} #{t "product_remain"}" %></span>
+            </li>
+          </ul>
+          <hr>
+          <div class="product__details__quantity">
+            <div class="quantity">
+              <div class="pro-qty">
+                <input type="number"/>
+              </div>
+            </div>
+          </div>
+          <%= link_to t("add_to_cart"), root_path, class: "primary-btn" %>
+          <ul>
+            <li><b><%= t "shipping" %></b> <span><samp><%= t "free" %></samp></span></li>
+            <li><b><%= t "unit" %></b> <span><%= @product.unit %></span></li>
+            <li><b>Share on</b>
+              <div class="share">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product Details Section End -->

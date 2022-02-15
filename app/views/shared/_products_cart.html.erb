@@ -1,0 +1,33 @@
+<tr id="<%= product.id %>">
+  <td class="shoping__cart__item">
+    <h5><%= product.name %></h5>
+  </td>
+  <td class="shoping__cart__price">
+    <%= product.price %>
+  </td>
+  <td class="shoping__cart__price">
+    <%= product.unit %>
+  </td>
+  <td class="shoping__cart__quantity">
+    <div class="quantity">
+      <div class="pro-qty">
+        <input type="number" id="quantity"
+          max="<%= product.quantity %>"
+          min="1"
+          data-id="<%= product.id %>"
+          value="<%= quantity %>">
+      </div>
+    </div>
+  </td>
+  <td class="shoping__cart__total"
+    data-money="<%= number_to_currency(price_item_cart product.price, quantity) %>">
+    <%= number_to_currency(price_item_cart product.price, quantity) %>
+  </td>
+  <td class="shoping__cart__item__close">
+    <span class="icon_close">
+      <%= link_to remove_from_cart_path(product.id), method: :delete do %>
+        <i class="fa-solid fa-xmark"></i>
+      <% end %>
+    </span>
+  </td>
+</tr>

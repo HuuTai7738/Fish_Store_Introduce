@@ -1,0 +1,57 @@
+<!-- Shoping Cart Section Begin -->
+<% provide :title, t("carts") %>
+<section class="shoping-cart spad">
+<div class="container">
+  <div class="row">
+      <div class="col-lg-12">
+        <div class="shoping__cart__table">
+          <table>
+            <thead>
+              <tr>
+                <th class="shoping__product">
+                  <%= t "product" %>
+                </th>
+                <th><%= t "price" %></th>
+                <th><%= t "unit" %></th>
+                <th><%= t "quantity" %></th>
+                <th><%= t "total" %></th>
+                <th></th>
+              </tr>
+            </thead>
+              <tbody id="products_cart">
+                <% @products_in_cart.each do |product, quantity|%>
+                  <%= render partial: "shared/products_cart", locals: {product: product, quantity: quantity} %>
+                <% end %>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="shoping__cart__btns">
+          <%= link_to t("continue_shopping"), products_path, class: "primary-btn cart-btn" %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="shoping__checkout">
+          <div class="shoping__continue">
+          <div class="shoping__address">
+            <h5><%= t "ship_infor" %></h5>
+            <form action="#">
+              <input type="text">
+            </form>
+          </div>
+        </div>
+          <h5><%= t "cart_total" %></h5>
+          <ul>
+            <li><%= t "subtotal" %> <span id="subtotal"><%= number_to_currency total_money_cart %></span></li>
+            <li><%= t"total" %> <span id="total"><%= number_to_currency total_money_cart %></span></li>
+          </ul>
+          <%= link_to t("checkout"), root_path, class: "primary-btn"%>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+<!-- Shoping Cart Section End -->

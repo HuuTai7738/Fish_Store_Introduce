@@ -1,0 +1,4 @@
+$('#<%= @product.id %> .shoping__cart__total').html('<%= number_to_currency(price_item_cart @product.price, @quantity) %>');
+$('#<%= @product.id %> .shoping__cart__total').data('money', '<%= number_to_currency(price_item_cart @product.price, @quantity) %>');
+$('#subtotal').html('<%= number_to_currency total_money_cart %>');
+$('#total').html('<%= number_to_currency total_money_cart %>');

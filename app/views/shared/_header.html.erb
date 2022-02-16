@@ -54,9 +54,9 @@
         <ul>
           <li><%= link_to t("home"), root_path %></li>
           <li><%= link_to t("product"), products_path %></li>
-          <li><%= link_to t("cart"), root_path %>
+          <li><%= link_to t("cart"), carts_path %>
             <ul class="header__menu__dropdown">
-              <li><%= link_to t("cart"), root_path %></li>
+              <li><%= link_to t("cart"), carts_path %></li>
             </ul>
           </li>
           <li><%= link_to t("contact"), contact_path %></li>
@@ -67,9 +67,11 @@
       <div class="header__cart">
         <ul>
           <li>
-            <%= link_to root_path do %>
+            <%= link_to carts_path do %>
               <i class="fa fa-shopping-bag"></i>
-              <span>3</span>
+              <span>
+                <%= current_carts.count %>
+              </span>
             <% end %>
           </li>
         </ul>

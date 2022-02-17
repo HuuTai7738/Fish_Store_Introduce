@@ -51,6 +51,16 @@ en:
   fails: "Fails"
   not_found: "Not found"
   carts: "Carts"
+  order_fails: "Order fails"
+  order_id: "Order id"
+  order_name: "Name"
+  order_phone: "Phone"
+  order_email: "Email"
+  order_address: "Address"
+  place_order: "PLACE ORDER"
+  your_order: "Your order"
+  bill_details: "Bill Details"
+  cancel: "Cancel"
   static_pages:
     home:
       title: "home"

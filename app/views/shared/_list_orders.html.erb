@@ -1,0 +1,28 @@
+<tr>
+  <td>
+    <h5><%= order.id %></h5>
+  </td>
+
+  <td class="shoping__cart__product">
+    <% order.order_details.each do |detail| %>
+      <p>
+        <%= "#{detail.product.name}x#{detail.quantity}
+          (#{number_to_currency detail.price} / #{detail.unit})" %>
+      </p>
+    <% end %>
+  </td>
+  <td>
+    <%= order.status %>
+  </td>
+  <td class="shoping__cart__price">
+    <%= number_to_currency total_order(order) %>
+  </td>
+  <td>
+    <% if check_status order %>
+      <%= link_to t("cancel"), cancel_path(order.id),
+        method: :patch, class: "btn btn-warning",
+        data: {confirm: "You sure?"} %>
+    <% end %>
+    &nbsp;
+  </td>
+</tr>

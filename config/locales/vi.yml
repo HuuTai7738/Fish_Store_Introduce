@@ -51,6 +51,16 @@ vi:
   fails: "Thất bại"
   not_found: "Không tìm thấý"
   carts: "Giỏ hàng"
+  order_fails: "Đặt hàng thất bại"
+  order_id: "Mã đơn"
+  order_name: "Tên"
+  order_phone: "SDT"
+  order_email: "Email"
+  order_address: "Địa chỉ đặt hàng"
+  place_order: "ĐẶT HÀNG"
+  your_order: "Đơn hàng của bạn"
+  bill_details: "Chi tiết hóa đơn"
+  cancel: "Hủy"
   static_pages:
     home:
       title: "Trang chủ"

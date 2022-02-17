@@ -35,20 +35,12 @@
       </div>
       <div class="col-lg-6">
         <div class="shoping__checkout">
-          <div class="shoping__continue">
-          <div class="shoping__address">
-            <h5><%= t "ship_infor" %></h5>
-            <form action="#">
-              <input type="text">
-            </form>
-          </div>
-        </div>
           <h5><%= t "cart_total" %></h5>
           <ul>
             <li><%= t "subtotal" %> <span id="subtotal"><%= number_to_currency total_money_cart %></span></li>
             <li><%= t"total" %> <span id="total"><%= number_to_currency total_money_cart %></span></li>
           </ul>
-          <%= link_to t("checkout"), root_path, class: "primary-btn"%>
+          <%= link_to t("checkout"), checkout_path, class: "primary-btn" %>
         </div>
       </div>
     </div>

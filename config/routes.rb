@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     post "/add_to_cart", to: "carts#create", as: "add_to_cart"
     delete "/remove_from_cart/:id", to: "carts#destroy", as: "remove_from_cart"
     post "/update_cart", to: "carts#update"
+    get "/list_orders", to: "orders#index"
+    get "/checkout", to: "orders#new"
+    patch "/cancel/:id", to: "orders#update", as: "cancel"
+
+    resources :orders, only: :create
 
     resources :products, only: :show
     namespace :admin do

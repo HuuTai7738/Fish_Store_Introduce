@@ -61,6 +61,16 @@ vi:
   your_order: "Đơn hàng của bạn"
   bill_details: "Chi tiết hóa đơn"
   cancel: "Hủy"
+  create: "Tạo mới"
+  save: "Lưu"
+  edit_category: "Sửa thông tin danh mục"
+  new_category: "Danh mục mới"
+  cat_id: "Mã danh mục"
+  cat_name: "Tên danh mục"
+  num_product: "SL sản phẩm"
+  action: "Thao tác"
+  list_cat: "Danh sách danh mục"
+  product_still_have: "Không thể xóa khi vẫn còn sản phẩm trong danh mục"
   static_pages:
     home:
       title: "Trang chủ"
@@ -73,3 +83,9 @@ vi:
       log_in: "Đăng nhập"
       new_user: "User mới"
       sign_up_now: "Đăng kí ngay!"
+  activerecord:
+    models:
+      category: "Danh mục"
+    attributes:
+      category:
+        name: "Tên danh mục"

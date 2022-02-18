@@ -61,6 +61,16 @@ en:
   your_order: "Your order"
   bill_details: "Bill Details"
   cancel: "Cancel"
+  create: "Create"
+  save: "Save"
+  edit_category: "Edit category"
+  new_category: "New Category"
+  cat_id: "Category ID"
+  cat_name: "Category Name"
+  num_product: "Number of product"
+  action: "Action"
+  list_cat: "List Category"
+  product_still_have: "Cant delete because category contain product(s)"
   static_pages:
     home:
       title: "home"
@@ -73,3 +83,9 @@ en:
       log_in: "Log in"
       new_user: "New user"
       sign_up_now: "Sign up now!"
+  activerecord:
+    models:
+      category: "Category"
+    attributes:
+      category:
+        name: "Category name"

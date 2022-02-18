@@ -1,34 +1,40 @@
 <div class="sidebar">
   <div class="user-profile">
     <div class="info-wrapper">
-      <p class="user-name">#</p>
+      <p class="user-name"><%= current_user.name %></p>
     </div>
   </div>
   <ul class="navigation-menu">
     <li class="nav-category-divider"><%= t "main" %></li>
     <li>
-       <%= link_to root_path do%>
-          <span class="link-title"><%= t "dashboard" %></span>
+      <%= link_to root_path do %>
+        <span class="link-title"><%= t "dashboard" %></span>
         <i class="fa-solid fa-gauge"></i>
-        <% end %>
+      <% end %>
     </li>
     <li>
-       <%= link_to root_path do%>
-          <span class="link-title"><%= t "products" %></span>
-          <i class="fa-solid fa-fish"></i>
-        <% end %>
+      <%= link_to admin_categories_path do %>
+        <span class="link-title"><%= t "categories" %></span>
+        <i class="fa-solid fa-gauge"></i>
+      <% end %>
     </li>
-     <li>
-       <%= link_to root_path do%>
-          <span class="link-title"><%= t "users" %></span>
-          <i class="fa-solid fa-users"></i>
-        <% end %>
+    <li>
+      <%= link_to root_path do %>
+        <span class="link-title"><%= t "products" %></span>
+        <i class="fa-solid fa-fish"></i>
+      <% end %>
     </li>
-     <li>
-       <%= link_to root_path do%>
-          <span class="link-title"><%= t "orders" %></span>
-          <i class="fa-solid fa-box-open"></i>
-        <% end %>
+    <li>
+      <%= link_to root_path do %>
+        <span class="link-title"><%= t "users" %></span>
+        <i class="fa-solid fa-users"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to root_path do %>
+        <span class="link-title"><%= t "orders" %></span>
+        <i class="fa-solid fa-box-open"></i>
+      <% end %>
     </li>
   </ul>
 </div>

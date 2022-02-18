@@ -1,0 +1,16 @@
+<tr>
+  <td><%= category.id %></td>
+  <td><%= category.name %></td>
+  <td><%= category.products.size %></td>
+  <td class="actions">
+    <%= link_to edit_admin_category_path(category.id) do %>
+      <i class="fa-solid fa-wrench"></i>
+    <% end %>
+    <%= link_to admin_category_path(category.id), method: :delete do %>
+      <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+  </td>
+  <td class="actions">
+    <i class="fa-solid fa-ellipsis-vertical"></i>
+  </td>
+</tr>

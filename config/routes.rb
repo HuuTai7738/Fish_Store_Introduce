@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
     resources :products, only: :show
     namespace :admin do
-      root "admin#index"
+      root "categories#index"
+      resources :categories
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

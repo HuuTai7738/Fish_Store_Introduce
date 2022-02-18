@@ -1,0 +1,32 @@
+<h2><%= t "list_cat" %></h2>
+
+<div class="row">
+  <div class="col-lg-10">
+    <div class="grid">
+      <h5 class="grid-header">
+        <%= link_to t("new_category"), new_admin_category_path %>
+      </h5>
+      <div class="item-wrapper">
+        <div class="table-responsive">
+          <table class="table info-table table-striped">
+            <thead>
+              <tr>
+                <th><%= t "cat_id" %></th>
+                <th><%= t "cat_name" %></th>
+                <th><%= t "num_product" %></th>
+                <th><%= t "action" %></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render @category %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <%== pagy_bootstrap_nav(@pagy) %>
+      </div>
+    </div>
+  </div>
+</div>

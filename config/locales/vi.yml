@@ -71,6 +71,15 @@ vi:
   action: "Thao tác"
   list_cat: "Danh sách danh mục"
   product_still_have: "Không thể xóa khi vẫn còn sản phẩm trong danh mục"
+  pro: "Mã SP"
+  pro_name: "Tên sản phẩm"
+  description: "Mô tả"
+  status: "Trạng thái"
+  category_name: "Tên danh mục"
+  pro_details: "Chi tiết sản phẩm"
+  pro_new: "Sản phẩm mới"
+  pro_edit: "Sửa thông tin sản phẩm"
+  create_fail: "Thêm mới thất bại"
   static_pages:
     home:
       title: "Trang chủ"
@@ -86,6 +95,15 @@ vi:
   activerecord:
     models:
       category: "Danh mục"
+      product: "Sản phẩm"
     attributes:
       category:
         name: "Tên danh mục"
+      product:
+        name: "Tên sản phẩm"
+        description: "Mô tả"
+        status: "Trạng thái"
+        price: "Giá"
+        unit: "Đơn vị"
+        quantity: "Số lượng"
+        category_id: "Mã danh mục"

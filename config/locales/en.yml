@@ -71,6 +71,15 @@ en:
   action: "Action"
   list_cat: "List Category"
   product_still_have: "Cant delete because category contain product(s)"
+  pro: "Product ID"
+  pro_name: "Product name"
+  description: "Description"
+  status: "Status"
+  category_name: "Category Name"
+  pro_details: "Product details"
+  pro_new: "New Product"
+  pro_edit: "Edit Product"
+  create_fail: "Create fails"
   static_pages:
     home:
       title: "home"
@@ -86,6 +95,15 @@ en:
   activerecord:
     models:
       category: "Category"
+      product: "Product"
     attributes:
       category:
         name: "Category name"
+      product:
+        name: "Product name"
+        description: "Description"
+        status: "Status"
+        price: "Price"
+        unit: "Unit"
+        quantity: "Quantity"
+        category_id: "Category ID"

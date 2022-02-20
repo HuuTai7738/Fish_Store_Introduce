@@ -7,4 +7,9 @@ class Order < ApplicationRecord
   validates :user_id, presence: true
   validates :order_address, presence: true
   scope :newest, ->{order created_at: :desc}
+  scope :success_order_with_pro_id, (lambda do |product_id|
+    joins(:order_details)
+    .where.not(status: 4)
+    .where("order_details.product_id = ?", product_id)
+  end)
 end

@@ -1,0 +1,25 @@
+<tr>
+  <td><%= product.id %></td>
+  <td><%= product.name %></td>
+  <td>
+    <label class="badge badge-<%= status_color product.status %>">
+      <%= product.status %>
+    </label>
+  </td>
+  <td><%= product.price %></td>
+  <td><%= product.unit %></td>
+  <td><%= product.quantity %></td>
+  <td class="actions">
+    <%= link_to edit_admin_product_path(product.id) do %>
+      <i class="fa-solid fa-wrench"></i>
+    <% end %>
+    <%= link_to admin_product_path(product.id), method: :delete do %>
+      <i class="fa-solid fa-trash-can"></i>
+    <% end %>
+  </td>
+  <td class="actions">
+    <%= link_to admin_product_path product do %>
+      <i class="fa-solid fa-eye"></i>
+    <% end %>
+  </td>
+</tr>

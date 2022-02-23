@@ -1,0 +1,85 @@
+<div class="col-lg-12">
+  <div class="grid">
+    <p class="grid-header"><%= t "order_details" %></p>
+    <div class="grid-body">
+      <div class="item-wrapper">
+        <div class="row mb-3">
+          <div class="col-md-8 mx-auto">
+            <div class="form-group row showcase_row_area">
+              <div class="col-md-3 showcase_text_area">
+                <b><%= t "order_id" %></b>
+              </div>
+              <div class="col-md-9 showcase_content_area">
+                <p><%= @order.id %></p>
+              </div>
+            </div>
+            <div class="form-group row showcase_row_area">
+              <div class="col-md-3 showcase_text_area">
+                <b><%= t "user_name" %></b>
+              </div>
+              <div class="col-md-9 showcase_content_area">
+                <p><%= @order.user_name %></p>
+              </div>
+            </div>
+            <div class="form-group row showcase_row_area">
+              <div class="col-md-3 showcase_text_area">
+                <b><%= t "user_phone_number" %></b>
+              </div>
+              <div class="col-md-9 showcase_content_area">
+                <p><%= @order.user_phone %></p>
+              </div>
+            </div>
+            <div class="form-group row showcase_row_area">
+              <div class="col-md-3 showcase_text_area">
+                <b><%= t "user_email" %></b>
+              </div>
+              <div class="col-md-9 showcase_content_area">
+                <p><%= @order.user_email %></p>
+              </div>
+            </div>
+            <div class="form-group row showcase_row_area">
+              <div class="col-md-3 showcase_text_area">
+                <b><%= t "product_in_order" %></b>
+              </div>
+              <div class="col-md-9 showcase_content_area">
+                <% @order.order_details.each do |detail| %>
+                  <p>
+                    <%= "#{detail.product.name}x#{detail.quantity}
+                      (#{number_to_currency detail.price} / #{detail.unit})" %>
+                  </p>
+                <% end %>
+              </div>
+            </div>
+            <div class="form-group row showcase_row_area">
+              <div class="col-md-3 showcase_text_area">
+                <b><%= t "order_address" %></b>
+              </div>
+              <div class="col-md-9 showcase_content_area">
+                <p><%= @order.order_address %></p>
+              </div>
+            </div>
+            <div class="form-group row showcase_row_area">
+              <div class="col-md-3 showcase_text_area">
+                <b><%= t "order_date" %></b>
+              </div>
+              <div class="col-md-9 showcase_content_area">
+                <p><%= @order.order_date %></p>
+              </div>
+            </div>
+            <div class="form-group row showcase_row_area">
+              <div class="col-md-3 showcase_text_area">
+                <b><%= t "status" %></b>
+              </div>
+              <div class="col-md-9 showcase_content_area">
+                <label class="badge badge-<%= status_color_admin @order.status %>">
+                  <%= @order.status %>
+                </label>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

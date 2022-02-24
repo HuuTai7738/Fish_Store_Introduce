@@ -80,6 +80,7 @@ en:
   pro_new: "New Product"
   pro_edit: "Edit Product"
   create_fail: "Create fails"
+  search_by_name: "Seach by name"
   static_pages:
     home:
       title: "home"

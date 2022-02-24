@@ -1,0 +1,40 @@
+<tr>
+  <td><%= order.id %></td>
+  <td><%= order.user.name %></td>
+  <td>
+    <% order.order_details.each do |detail| %>
+      <p>
+        <%= "#{detail.product.name}x#{detail.quantity}
+          (#{number_to_currency detail.price} / #{detail.unit})" %>
+      </p>
+    <% end %>
+  </td>
+  <td><%= order.order_address %></td>
+  <td><%= order.order_date.to_date %></td>
+  <td>
+    <label class="badge badge-<%= status_color_admin order.status %>">
+      <%= order.status %>
+    </label>
+  </td>
+  <td><%= number_to_currency total_order(order) %></td>
+  <td class="actions">
+  <% if order.new_order? %>
+    <%= link_to admin_order_path(id: order.id, status: :accepted), method: :put do %>
+      <i class="fa-solid fa-square-check"></i>
+    <% end %>
+    <%= link_to admin_order_path(id: order.id, status: :rejected), method: :put do %>
+      <i class="fa-solid fa-ban"></i>
+    <% end %>
+  <% end %>
+  <% if order.accepted? %>
+    <%= link_to admin_order_path(id: order.id, status: :success), method: :put do %>
+      <i class="fa-solid fa-check-to-slot"></i>
+    <% end %>
+  <% end %>
+  </td>
+  <td class="actions">
+    <%= link_to admin_order_path order do %>
+      <i class="fa-solid fa-eye"></i>
+    <% end %>
+  </td>
+</tr>

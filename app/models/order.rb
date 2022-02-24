@@ -6,7 +6,13 @@ class Order < ApplicationRecord
 
   validates :user_id, presence: true
   validates :order_address, presence: true
+
+  delegate :name, :email, :phone, to: :user, prefix: :user
+  scope :filter_by_date, (lambda do |start_date, end_date|
+    where("created_at BETWEEN ? AND ?", start_date, end_date)
+  end)
   scope :newest, ->{order created_at: :desc}
+  scope :search_by_status, ->(status){where(status: status) if status}
   scope :success_order_with_pro_id, (lambda do |product_id|
     joins(:order_details)
     .where.not(status: 4)

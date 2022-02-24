@@ -80,6 +80,16 @@ vi:
   pro_new: "Sản phẩm mới"
   pro_edit: "Sửa thông tin sản phẩm"
   create_fail: "Thêm mới thất bại"
+  user_id: "Mã khách hàng"
+  user_name: "Tên khách hàng"
+  user_email: "Email khách hàng"
+  user_phone_number: "Số dt khách hàng"
+  role: "Quyền"
+  search_by_name: "Tìm theo tên"
+  customer_name: "Tên khách hàng"
+  product_in_order: "Sản phẩm trong đơn"
+  order_date: "Thời gian đặt hàng"
+  wrong_status: "Thay đổi trạng thái không hợp lệ"
   static_pages:
     home:
       title: "Trang chủ"

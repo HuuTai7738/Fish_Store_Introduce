@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       root "categories#index"
       resources :categories
       resources :products
+      resources :users, only: :index
+      resources :orders, only: %i(index show update)
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

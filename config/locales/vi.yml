@@ -90,6 +90,7 @@ vi:
   product_in_order: "Sản phẩm trong đơn"
   order_date: "Thời gian đặt hàng"
   wrong_status: "Thay đổi trạng thái không hợp lệ"
+  edit_profile: "Sửa TT"
   static_pages:
     home:
       title: "Trang chủ"

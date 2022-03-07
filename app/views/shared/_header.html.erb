@@ -26,10 +26,13 @@
               <span class="arrow_carrot-down"></span>
               <ul>
                 <li><%= link_to t("login"), login_path %></li>
-                <% if logged_in? %>
+                <% if user_signed_in? %>
                   <li>
                     <%= link_to t("logout"), logout_path,
                       method: :delete %>
+                  </li>
+                  <li>
+                    <%= link_to t("edit_profile"), edit_user_registration_path %>
                   </li>
                 <% end %>
               </ul>

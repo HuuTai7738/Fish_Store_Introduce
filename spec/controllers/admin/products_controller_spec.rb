@@ -1,11 +1,10 @@
 require "rails_helper"
-include SessionsHelper
 RSpec.describe Admin::ProductsController, type: :controller do
-  let(:user_test){FactoryBot.create :user, role: 1}
+  let(:user_test){FactoryBot.create :user, role: 1, confirmed_at: Time.zone.now}
   let(:product_test){FactoryBot.create :product}
 
   before do
-    log_in user_test
+    sign_in user_test
   end
   describe "GET #index" do
     it "should show all the product" do

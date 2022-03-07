@@ -2,10 +2,8 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
 
     root "static_pages#home"
+    devise_for :users
     get "/contact", to: "static_pages#contact"
-    get "/login", to: "sessions#new"
-    post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
     get "/products", to: "products#index"
     get "/carts", to: "carts#index"
     post "/add_to_cart", to: "carts#create", as: "add_to_cart"
@@ -14,6 +12,13 @@ Rails.application.routes.draw do
     get "/list_orders", to: "orders#index"
     get "/checkout", to: "orders#new"
     patch "/cancel/:id", to: "orders#update", as: "cancel"
+
+    as :user do
+      get "/login", to: "devise/sessions#new"
+      post "/login", to: "devise/sessions#create"
+      delete "/logout", to: "devise/sessions#destroy"
+      get "/signup", to: "devise/registrations#new"
+    end
 
     resources :orders, only: :create
 

@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :check_login
+  before_action :authenticate_user!
   def index
     @orders = current_user.orders.includes(:order_details).newest
     return if @orders
@@ -43,13 +43,6 @@ class OrdersController < ApplicationController
   end
 
   private
-  def check_login
-    return current_user if logged_in?
-
-    flash[:warning] = "please_login"
-    redirect_to login_path
-  end
-
   def order_params
     params.permit :user_id, :order_address, :order_date
   end

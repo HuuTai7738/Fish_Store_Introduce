@@ -10,6 +10,7 @@ import "channels"
 
 import "bootstrap";
 import "@fortawesome/fontawesome-free/css/all"
+global.toastr = require("toastr")
 require("jquery")
 require("./custom")
 Rails.start()

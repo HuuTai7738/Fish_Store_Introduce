@@ -1,12 +1,12 @@
 class Admin::AdminController < ApplicationController
-  before_action :require_admin
+  before_action :authenticate_user!, :is_admin?
   layout "admin"
 
   private
-  def require_admin
-    return if admin_signed_in
+  def is_admin?
+    return if current_user.admin?
 
-    redirect_to root_path
     flash[:danger] = t "login_admin"
+    redirect_to root_path
   end
 end

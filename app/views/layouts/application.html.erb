@@ -16,9 +16,7 @@
       <%= render "shared/header" %>
     </header>
     <div class="container">
-      <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <% end %>
+      <%= toastr_flash.html_safe %>
       <%= yield %>
     </div>
     <header class="footer spad">

@@ -1,5 +1,5 @@
 class Admin::OrdersController < Admin::AdminController
-  before_action :load_order, only: %i(update show)
+  load_and_authorize_resource
 
   def index
     @order = Order.search_by_status(params[:status]).newest
@@ -17,15 +17,6 @@ class Admin::OrdersController < Admin::AdminController
     else
       flash[:danger] = t "wrong_status"
     end
-    redirect_to admin_orders_path
-  end
-
-  private
-  def load_order
-    @order = Order.find_by id: params[:id]
-    return if @order
-
-    flash[:danger] = t "not_found"
     redirect_to admin_orders_path
   end
 end

@@ -1,6 +1,5 @@
 class Admin::CategoriesController < Admin::AdminController
-  before_action :load_category, only: %i(edit destroy update)
-
+  load_and_authorize_resource
   def index
     @pagy, @category = pagy Category.all, items: Settings.item_per_page
   end
@@ -45,13 +44,5 @@ class Admin::CategoriesController < Admin::AdminController
   private
   def category_params
     params.require(:category).permit :name
-  end
-
-  def load_category
-    @category = Category.find_by id: params[:id]
-    return if @category
-
-    flash[:danger] = t "not_found"
-    redirect_to root_path
   end
 end

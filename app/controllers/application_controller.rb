@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from CanCan::AccessDenied, with: :access_denied
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
   def after_sign_in_path_for resource
     if resource.admin?
       admin_root_path
@@ -21,6 +23,17 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def not_found
+    flash[:danger] = t "not_found"
+    redirect_to root_path
+  end
+
+  def access_denied
+    flash[:danger] = t "not_permission"
+    redirect_to root_path
+  end
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end

@@ -81,6 +81,7 @@ en:
   pro_edit: "Edit Product"
   create_fail: "Create fails"
   search_by_name: "Seach by name"
+  not_permission: "You dont have permission to do that!"
   static_pages:
     home:
       title: "home"

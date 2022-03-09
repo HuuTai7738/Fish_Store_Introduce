@@ -1,6 +1,6 @@
 class Admin::ProductsController < Admin::AdminController
   include Admin::ProductsHelper
-  before_action :load_product, except: %i(index new create)
+  load_and_authorize_resource
 
   def index
     @product = Product.search_by_name(params[:name]).newest
@@ -55,14 +55,6 @@ class Admin::ProductsController < Admin::AdminController
                                     :unit,
                                     :quantity,
                                     :category_id)
-  end
-
-  def load_product
-    @product = Product.find_by id: params[:id]
-    return if @product
-
-    flash[:danger] = t "not_found"
-    redirect_to root_path
   end
 
   def handle_product_exist_in_order

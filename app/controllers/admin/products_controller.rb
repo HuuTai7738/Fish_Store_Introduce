@@ -3,7 +3,8 @@ class Admin::ProductsController < Admin::AdminController
   load_and_authorize_resource
 
   def index
-    @product = Product.search_by_name(params[:name]).newest
+    @q = Product.ransack params[:q]
+    @product = @q.result.newest
     @pagy, @product = pagy @product, items: Settings.item_per_page
   end
 

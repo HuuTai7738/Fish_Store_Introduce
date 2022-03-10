@@ -33,7 +33,7 @@ vi:
   shop_now: "MUA NGAY"
   sort_by: "Lọc theo"
   all_product: "Tất cả sản phẩm"
-  price: "Giá($)"
+  price: "Giá"
   add_to_cart: "Thêm vào giỏ hàng"
   product_remain: "sản phẩm còn lại"
   shipping: "Giao hàng"
@@ -92,6 +92,9 @@ vi:
   wrong_status: "Thay đổi trạng thái không hợp lệ"
   edit_profile: "Sửa TT"
   not_permission: "Bạn không có quyền để làm vậy!"
+  search: "TÌM KIẾM"
+  filter_product: "Lọc sản phẩm"
+  filter: "Lọc theo giá"
   static_pages:
     home:
       title: "Trang chủ"

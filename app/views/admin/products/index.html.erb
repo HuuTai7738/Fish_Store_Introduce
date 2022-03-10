@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-lg-3">
-    <%= form_tag admin_products_path, method: :get, class: "t-header-search-box" do %>
+    <%= search_form_for [:admin, @q], class: "t-header-search-box" do |f| %>
       <div class="input-group">
-        <%= text_field_tag :name %>
-        <%= button_tag class: "btn btn-primary" do %>
+        <%= f.text_field :name_cont, placeholder: t("search_by_name") %>
+        <%= f.button nil, type: "submit", class: "btn btn-primary" do %>
           <i class="fa-solid fa-circle-arrow-right"></i>
         <% end %>
       </div>
@@ -24,9 +24,9 @@
               <th><%= t "pro" %></th>
               <th><%= t "pro_name" %></th>
               <th><%= t "status" %></th>
-              <th><%= t "price" %></th>
+              <th><%= sort_link @q, :price, t("price") %></th>
               <th><%= t "unit" %></th>
-              <th><%= t"quantity" %></th>
+              <th><%= sort_link @q, :quantity, t("quantity") %></th>
               <th><%= t "action" %></th>
               <th></th>
             </tr>

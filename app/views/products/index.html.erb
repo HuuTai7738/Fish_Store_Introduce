@@ -8,26 +8,34 @@
             <h4><%= t "department" %></h4>
             <ul>
               <% @categories.each do |category| %>
-                <li><%= link_to category.name, root_path %></li>
+                <li><%= link_to category.name, products_path(q: {category_id_eq: category.id})%></li>
               <% end %>
             </ul>
-          </div>
-          <div class="sidebar__item">
-            <h4>
-              <%= t "price" %>
-            </h4>
-            <div class="price-range-wrap">
-              <div class="range-slider">
-                <div class="price-input">
-                  <input type="text" id="minamount">
-                  <input type="text" id="maxamount">
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div class="col-lg-9 col-md-7">
+        <div class="hero__search">
+          <div class="hero__search__form">
+            <%= search_form_for @q do |f| %>
+              <div class="hero__search__categories">
+                <%= t "categories" %>
+                <span class="arrow_carrot-down"></span>
+              </div>
+              <%= f.text_field :name_cont, placeholder: "What do yo u need?" %>
+              <%= f.button t("search"), type: "submit", class: "site-btn" %>
+            <% end %>
+          </div>
+          <div class="hero__search__phone">
+            <div class="hero__search__phone__icon">
+              <i class="fa fa-phone"></i>
+            </div>
+            <div class="hero__search__phone__text">
+              <h5>+65 11.188.888</h5>
+              <span><%= t "support" %></span>
+            </div>
+          </div>
+        </div>
         <div class="product__discount">
           <div class="section-title product__discount__title">
             <h2><%= t "all_product" %></h2>
@@ -36,11 +44,31 @@
             <div class="row">
               <div class="col-lg-4 col-md-5">
                 <div class="filter__sort">
-                  <span><%= t "sort_by"%></span>
-                  <select>
-                    <option value="0">Default</option>
-                    <option value="0">Default</option>
-                  </select>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%= t "filter_product" %>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <%= sort_link @q, :name, t("pro_name"), {}, class: "dropdown-item" %>
+                      <%= sort_link @q, :price, t("price"), {}, class: "dropdown-item" %>
+                      <%= sort_link @q, :quantity, t("quantity"), {}, class: "dropdown-item" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="sidebar__item">
+                  <div class="price-range-wrap">
+                    <div class="price-input">
+                      <%= search_form_for @q do |f| %>
+                        <div class="input-group">
+                          <%= f.number_field :price_gteq, class: "form-control form-control-lg" %>
+                          <%= f.number_field :price_lteq, class: "form-control form-control-lg" %>
+                          <%= f.button t("filter"), type: "submit", class: "btn btn-primary btn-sm site-btn" %>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

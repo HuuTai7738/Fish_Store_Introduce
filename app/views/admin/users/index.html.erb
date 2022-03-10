@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-lg-3">
-    <%= form_tag admin_users_path, method: :get, class: "t-header-search-box" do %>
+    <%= search_form_for [:admin, @q] do |f| %>
       <div class="input-group">
-        <%= text_field_tag :name, nil, placeholder: t("search_by_name") %>
-        <%= button_tag class: "btn btn-primary" do %>
+        <%= f.text_field :name_or_id_eq, placeholder: t("search_by_name") %>
+        <%= f.button nil, type: "submit", class: "btn btn-primary" do %>
           <i class="fa-solid fa-circle-arrow-right"></i>
         <% end %>
       </div>

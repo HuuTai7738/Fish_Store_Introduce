@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   def index
     @orders = current_user.orders.includes(:order_details).newest
+    @pagy, @orders = pagy @orders, items: Settings.item_per_page
     return if @orders
 
     flash[:danger] = t "not_found"

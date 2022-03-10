@@ -2,11 +2,9 @@ class Admin::OrdersController < Admin::AdminController
   load_and_authorize_resource
 
   def index
-    @order = Order.search_by_status(params[:status]).newest
+    @q = Order.joins(:user).ransack params[:q]
+    @order = @q.result.newest
     @pagy, @order = pagy @order, items: Settings.item_per_page
-    return if params[:date].blank?
-
-    @order = @order.filter_by_date(params[:date][:start], params[:date][:end])
   end
 
   def show; end

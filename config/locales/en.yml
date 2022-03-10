@@ -33,7 +33,7 @@ en:
   shop_now: "SHOP NOW"
   sort_by: "Sort by"
   all_product: "All Product"
-  price: "Price($)"
+  price: "Price"
   add_to_cart: "Add to cart"
   product_remain: "product remain"
   shipping: "Shipping"
@@ -82,6 +82,9 @@ en:
   create_fail: "Create fails"
   search_by_name: "Seach by name"
   not_permission: "You dont have permission to do that!"
+  search: "SEARCH"
+  filter_product: "Filter Product"
+  filter: "Filter by Price"
   static_pages:
     home:
       title: "home"

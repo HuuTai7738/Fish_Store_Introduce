@@ -11,6 +11,16 @@ class Order < ApplicationRecord
   scope :filter_by_date, (lambda do |start_date, end_date|
     where("created_at BETWEEN ? AND ?", start_date, end_date)
   end)
+  scope :sort_by_total_desc, (lambda do
+    joins(:order_details)
+    .group("id")
+    .order("sum(order_details.quantity) DESC")
+  end)
+  scope :sort_by_total_asc, (lambda do
+    joins(:order_details)
+    .group("id")
+    .order("sum(order_details.quantity) ASC")
+  end)
   scope :newest, ->{order created_at: :desc}
   scope :search_by_status, ->(status){where(status: status) if status}
   scope :success_order_with_pro_id, (lambda do |product_id|

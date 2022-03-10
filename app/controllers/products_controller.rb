@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
   def index
     @categories = Category.all
-    @pagy, @products = pagy Product.activated_products,
+    @q = Product.ransack params[:q]
+    @products = @q.result distinct: true
+    @pagy, @products = pagy @products.activated_products,
                             items: Settings.item_per_page
   end
 

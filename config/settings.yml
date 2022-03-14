@@ -2,3 +2,5 @@ item_per_page: 10
 quantity: 1
 str_length: 255
 zero: 0
+image_type: ["image/jpeg", "image/gif", "image/png"]
+max_image_size: 5

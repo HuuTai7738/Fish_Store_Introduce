@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :category
   has_many :order_details, dependent: :destroy
   has_many :orders, through: :order_details
+  has_one_attached :image
   enum status: {activated: 0, deactivated: 1}
   scope :activated_products, ->{where status: 0}
   scope :feature_products, ->{order(created_at: :desc).limit(6)}
@@ -26,4 +27,6 @@ class Product < ApplicationRecord
               greater_than: Settings.zero
             }
   validates :unit, presence: true
+  validates :image, content_type: {in: Settings.image_type},
+                    size: {less_than: Settings.max_image_size.megabytes}
 end

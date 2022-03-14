@@ -1,6 +1,6 @@
 <tr id="<%= product.id %>">
   <td class="shoping__cart__item">
-    <h5><%= product.name %></h5>
+    <h5><%= link_to product.name, product %></h5>
   </td>
   <td class="shoping__cart__price">
     <%= product.price %>

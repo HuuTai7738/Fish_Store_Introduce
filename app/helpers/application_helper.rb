@@ -17,4 +17,8 @@ module ApplicationHelper
       flash_messages << text if message
     end.join("\n")
   end
+
+  def display_image product
+    image_tag(product.image.attached? ? product.image : "fish.jpg")
+  end
 end

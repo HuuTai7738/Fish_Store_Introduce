@@ -55,7 +55,8 @@ class Admin::ProductsController < Admin::AdminController
                                     :price,
                                     :unit,
                                     :quantity,
-                                    :category_id)
+                                    :category_id,
+                                    :image)
   end
 
   def handle_product_exist_in_order

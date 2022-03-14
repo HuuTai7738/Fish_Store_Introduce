@@ -60,6 +60,16 @@
       </div>
       <div class="form-group row showcase_row_area">
         <div class="col-md-3 showcase_text_area">
+          <%= f.label :image %>
+        </div>
+        <div class="col-md-9 showcase_content_area">
+          <div class="custom-file">
+            <%= f.file_field :image %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row showcase_row_area">
+        <div class="col-md-3 showcase_text_area">
         </div>
         <div class="col-md-9 showcase_content_area">
           <%= f.submit yield(:button_text), class: "btn btn-sm btn-primary" %>

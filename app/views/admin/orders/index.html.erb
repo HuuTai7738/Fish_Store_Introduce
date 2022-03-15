@@ -4,7 +4,7 @@
       <div class="input-group">
         <%= f.select :status_eq,
           options_for_select(Order.statuses), {}, class: "form-control" %>
-        <%= f.text_field :user_name_cont, class: "form-control" %>
+        <%= f.text_field :user_name_cont, class: "form-control", placeholder: t("search_by_name") %>
         <%= f.button nil, type: "submit", class: "btn btn-primary" do %>
           <i class="fa-solid fa-circle-arrow-right"></i>
         <% end %>

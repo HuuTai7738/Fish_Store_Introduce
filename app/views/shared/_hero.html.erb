@@ -37,16 +37,15 @@
         <div class="hero__item set-bg">
           <div class="hero__text">
             <span>
-              <% t "fresh" %>
+              <%= t "fresh" %>
             </span>
             <h2>
-              <%= t "vegetable" %> <br />
               <%= t "from_sea" %>
             </h2>
             <p>
               <%= t "free" %>
             </p>
-            <%= link_to t("shop_now"), "#", class: "primary-btn" %>
+            <%= link_to t("shop_now"), products_path, class: "primary-btn" %>
           </div>
         </div>
       </div>

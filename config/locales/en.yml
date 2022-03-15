@@ -10,7 +10,7 @@ en:
   product: "product"
   cart: "Cart"
   contact: "Contact"
-  department: "Department"
+  department: "Category"
   categories: "All Categories"
   fish: "Fish"
   support: "Support 24/7 time"
@@ -26,7 +26,7 @@ en:
   orders: "ORDERS"
   fail_login: "Fail login"
   login_admin: "Please login with admin"
-  fresh: "Fresh"
+  fresh: "Fresh Fish"
   fish: "Fish"
   from_sea: "100% from Sea"
   free: "Free Pickup and Delivery Available"
@@ -83,7 +83,8 @@ en:
   search_by_name: "Seach by name"
   not_permission: "You dont have permission to do that!"
   search: "SEARCH"
-  filter_product: "Filter Product"
+  edit_profile: "Edit Profile"
+  filter_product: "Sort Product"
   filter: "Filter by Price"
   static_pages:
     home:

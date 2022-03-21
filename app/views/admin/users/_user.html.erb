@@ -4,12 +4,5 @@
   <td><%= user.email %></td>
   <td><%= user.phone %></td>
   <td><%= user.role %></td>
-  <td class="actions">
-    <%= link_to admin_users_path do %>
-      <i class="fa-solid fa-user-check"></i>
-    <% end %>
-    <%= link_to admin_users_path do %>
-      <i class="fa-solid fa-user-xmark"></i>
-    <% end %>
-  </td>
+  <td><%= count_order user %></td>
 </tr>

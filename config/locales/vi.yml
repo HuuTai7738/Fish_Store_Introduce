@@ -93,7 +93,7 @@ vi:
   edit_profile: "Sửa TT"
   not_permission: "Bạn không có quyền để làm vậy!"
   search: "TÌM KIẾM"
-  filter_product: "Lọc sản phẩm"
+  filter_product: "Sắp xếp sản phẩm"
   filter: "Lọc theo giá"
   static_pages:
     home:

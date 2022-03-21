@@ -19,6 +19,7 @@ module ApplicationHelper
   end
 
   def display_image product
-    image_tag(product.image.attached? ? product.image : "fish.jpg")
+    image_tag (product.image.attached? ? product.image : "fish.jpg"),
+              class: "rounded"
   end
 end
